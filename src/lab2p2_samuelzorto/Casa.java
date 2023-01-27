@@ -21,7 +21,7 @@ public class Casa {
         
     }
 
-    public Casa(int noC, int noB, Color color, int Ancho, int Largo, int noDB, int noDC, String estado) {
+    public Casa(int noC, int noB, Color color, int Ancho, int Largo, int noDB, int noDC, String estado, String nomb) {
         this.noC = noC;
         this.noB = noB;
         this.color = color;
@@ -30,6 +30,7 @@ public class Casa {
         this.noDB = noDB;
         this.noDC = noDC;
         this.estado = estado;
+        this.nomb = nomb;
     }
 
     public int getNoC() {
@@ -104,5 +105,7 @@ public class Casa {
         this.nomb = nomb;
     }
     
-    
+    public String toString(){
+        return "No. de Casa: " + noC + "/ No. de Bloque: " + noB + "/ Color: " + color + "/ Ancho: " + Ancho + "/ Largo: " + Largo + "/ No. de Baños: " + noDB + "/ No. de Cuartos: " + noDC + "/ Estado: " + estado + "/ Nombre del Dueño: " + nomb ;
+    }
 }

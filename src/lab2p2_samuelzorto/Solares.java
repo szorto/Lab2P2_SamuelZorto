@@ -8,15 +8,17 @@ public class Solares {
     private int Ancho;
     private int Largo;
     private String estado;
+    private String nomb;
     
     public Solares(){
         
     }
 
-    public Solares(int Ancho, int Largo, String estado) {
+    public Solares(int Ancho, int Largo, String estado, String nomb) {
         this.Ancho = Ancho;
         this.Largo = Largo;
         this.estado = estado;
+        this.nomb = nomb;
     }
 
     public int getAncho() {
@@ -41,6 +43,14 @@ public class Solares {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getNomb() {
+        return nomb;
+    }
+
+    public void setNomb(String nomb) {
+        this.nomb = nomb;
     }
     
     
