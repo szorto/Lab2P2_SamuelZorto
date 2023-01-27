@@ -63,5 +63,7 @@ public class Edificios {
         this.nomb = nomb;
     }
     
-    
+    public String toString(){
+        return "No. de pisos: " + pisos + "/ Cantidad de locales: " + locales + "/ Direccio por Referencia: " + dirRef + "/ Estado: " + estado + "/ Nombre del dueño: " + nomb;
+    }
 }

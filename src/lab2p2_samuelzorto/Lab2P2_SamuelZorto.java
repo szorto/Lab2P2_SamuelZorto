@@ -137,7 +137,7 @@ public class Lab2P2_SamuelZorto {
                         ancho = entrada.nextInt();
                         System.out.println("Ingrese el largo: ");
                         largo = entrada.nextInt();
-                        Inmuebles.add(new Solares(ancho, largo, "", "XXX"));
+                        Inmuebles.add(new Solares(ancho, largo, "Construccion en espera", "XXX"));
                         break;
                 }
                 break;
@@ -155,6 +155,7 @@ public class Lab2P2_SamuelZorto {
                                 System.out.println(t.toString());
                             }
                         }
+                        System.out.println("");
                         break;
                     case 2:
                         for (Object t : Inmuebles) {
@@ -162,6 +163,7 @@ public class Lab2P2_SamuelZorto {
                                 System.out.println(t.toString());
                             }
                         }
+                        System.out.println("");
                         break;
                     case 3:
                         for (Object t : Inmuebles) {
@@ -169,6 +171,7 @@ public class Lab2P2_SamuelZorto {
                                 System.out.println(t.toString());
                             }
                         }
+                        System.out.println("");
                         break;
                     case 4:
                         break;
@@ -180,8 +183,20 @@ public class Lab2P2_SamuelZorto {
                 System.out.println("[2] Edificio");
                 System.out.println("[3] Solar");
                 inm = entrada.nextInt();
+                int elij;
                 switch(inm){
                     case 1:
+                        System.out.println("Elija lo que desee modificar:\n"
+                                + "[1] No. de casa\n"
+                                + "[2] No. de bloque\n"
+                                + "[3] Color\n"
+                                + "[4] Ancho y Largo\n"
+                                + "[5] No de Baños\n"
+                                + "[6] No. de Cuartos");
+                        elij = entrada.nextInt();
+                        switch(elij){
+                            
+                        }
                         break;
                     case 2:
                         break;

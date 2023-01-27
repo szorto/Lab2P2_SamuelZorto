@@ -53,5 +53,7 @@ public class Solares {
         this.nomb = nomb;
     }
     
-    
+    public String toString(){
+        return "Ancho: " + Ancho + "/ Largo: " + Largo + "/ Nombre de Dueño: " + nomb;
+    }
 }
