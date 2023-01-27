@@ -9,16 +9,21 @@ public class Usuario {
     private int edad;
     private String user;
     private String pass;
+    private boolean admin;
 
     public Usuario(){
         
     }
+
     
-    public Usuario(String nomb, int edad, String user, String pass) {
+    
+    
+    public Usuario(String nomb, int edad, String user, String pass, boolean admin) {
         this.nomb = nomb;
         this.edad = edad;
         this.user = user;
         this.pass = pass;
+        this.admin = admin;
     }
 
     public String getNomb() {
@@ -52,6 +57,16 @@ public class Usuario {
     public void setPass(String pass) {
         this.pass = pass;
     }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+    
+    
 
     @Override
     public String toString() {

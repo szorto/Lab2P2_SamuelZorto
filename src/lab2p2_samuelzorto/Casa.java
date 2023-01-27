@@ -14,12 +14,14 @@ public class Casa {
     private int Largo;
     private int noDB;
     private int noDC;
+    private String estado;
+    private String nomb;
     
     public Casa(){
         
     }
 
-    public Casa(int noC, int noB, Color color, int Ancho, int Largo, int noDB, int noDC) {
+    public Casa(int noC, int noB, Color color, int Ancho, int Largo, int noDB, int noDC, String estado) {
         this.noC = noC;
         this.noB = noB;
         this.color = color;
@@ -27,6 +29,7 @@ public class Casa {
         this.Largo = Largo;
         this.noDB = noDB;
         this.noDC = noDC;
+        this.estado = estado;
     }
 
     public int getNoC() {
@@ -83,6 +86,22 @@ public class Casa {
 
     public void setNoDC(int noDC) {
         this.noDC = noDC;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getNomb() {
+        return nomb;
+    }
+
+    public void setNomb(String nomb) {
+        this.nomb = nomb;
     }
     
     

@@ -8,15 +8,17 @@ public class Edificios {
     private int pisos;
     private int locales;
     private String dirRef;
+    private String estado;
     
     public Edificios(){
         
     }
 
-    public Edificios(int pisos, int locales, String dirRef) {
+    public Edificios(int pisos, int locales, String dirRef, String estado) {
         this.pisos = pisos;
         this.locales = locales;
         this.dirRef = dirRef;
+        this.estado = estado;
     }
 
     public int getPisos() {
@@ -41,6 +43,14 @@ public class Edificios {
 
     public void setDirRef(String dirRef) {
         this.dirRef = dirRef;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
     
     
