@@ -284,10 +284,46 @@ public class Lab2P2_SamuelZorto {
                 inm = entrada.nextInt();
                 switch (inm) {
                     case 1:
+                        System.out.println("Elija que casa desea destruir: ");
+                        for (Object t : Inmuebles) {
+                            if(t instanceof Casa){
+                                System.out.println(Inmuebles.indexOf(t) + " " + t);
+                            }
+                        }
+                        int pos = entrada.nextInt();
+                        if(Inmuebles.get(pos) instanceof Casa){
+                            Inmuebles.remove(pos);
+                            System.out.println("Fue borrado!!");
+                            System.out.println("");
+                        }
                         break;
                     case 2:
+                        System.out.println("Elija que casa desea destruir: ");
+                        for (Object t : Inmuebles) {
+                            if(t instanceof Edificios){
+                                System.out.println(Inmuebles.indexOf(t) + " " + t);
+                            }
+                        }
+                        pos = entrada.nextInt();
+                        if(Inmuebles.get(pos) instanceof Edificios){
+                            Inmuebles.remove(pos);
+                            System.out.println("Fue borrado!!");
+                            System.out.println("");
+                        }
                         break;
                     case 3:
+                        System.out.println("Elija que casa desea destruir: ");
+                        for (Object t : Inmuebles) {
+                            if(t instanceof Solares){
+                                System.out.println(Inmuebles.indexOf(t) + " " + t);
+                            }
+                        }
+                        pos = entrada.nextInt();
+                        if(Inmuebles.get(pos) instanceof Solares){
+                            Inmuebles.remove(pos);
+                            System.out.println("Fue borrado!!");
+                            System.out.println("");
+                        }
                         break;
                 }
                 break;
