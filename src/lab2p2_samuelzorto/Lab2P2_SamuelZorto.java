@@ -47,6 +47,9 @@ public class Lab2P2_SamuelZorto {
                     if (user == true) {
                         System.out.println("Cual inmueble desea cambiar: ");
                         int pos = entrada.nextInt();
+                        for (Object t : Inmuebles) {
+                            //ya no puedo man :/
+                        }
                     } else {
                         System.out.println("no no no");
                     }
