@@ -29,6 +29,7 @@ public class Lab2P2_SamuelZorto {
             System.out.println("[2]Manejo de Estados");
             System.out.println("[3]Log In/Sign up");
             System.out.println("[4]Salir");
+            System.out.println("[5]Comprar");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             int menuu = entrada.nextInt();
             System.out.println("");
@@ -43,6 +44,12 @@ public class Lab2P2_SamuelZorto {
 
                     break;
                 case 2:
+                    if (user == true) {
+                        System.out.println("Cual inmueble desea cambiar: ");
+                        int pos = entrada.nextInt();
+                    } else {
+                        System.out.println("no no no");
+                    }
                     break;
                 case 3:
                     System.out.println("Ya tiene cuenta? Y/N");
@@ -82,6 +89,53 @@ public class Lab2P2_SamuelZorto {
                 case 4:
                     rep = false;
                     break;
+                case 5:
+                    System.out.println("Elija que desea comprar: ");
+                    System.out.println("[1]Casa");
+                    System.out.println("[2]Edificio");
+                    System.out.println("[3]Solare");
+                    int aaa = entrada.nextInt();
+                    switch (aaa) {
+                        case 1:
+                            System.out.println("Ingrese la casa que desea comprar: ");
+                            int in = entrada.nextInt();
+                            int i =0;
+                            for (Object t : Inmuebles) {
+                                
+                                if(t instanceof Casa && Inmuebles.indexOf(t) == in && ((Casa) Inmuebles.get(i)).getEstado().equals("Lista")){
+                                    ((Casa) Inmuebles.get(in)).setNomb(usu.get(noUser).getNomb());
+                                    
+                                }
+                                i++;
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Ingrese el Edificio que desea comprar: ");
+                            in = entrada.nextInt();
+                            i =0;
+                            for (Object t : Inmuebles) {
+                                if(t instanceof Edificios && Inmuebles.indexOf(t) == in && ((Casa) Inmuebles.get(i)).getEstado().equals("Lista")){
+                                    ((Edificios) Inmuebles.get(in)).setNomb(usu.get(noUser).getNomb());
+                                    
+                                }
+                                i++;
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Ingrese el solar que desea comprar: ");
+                            in = entrada.nextInt();
+                            i = 0;
+                            for (Object t : Inmuebles) {
+                                if(t instanceof Solares && Inmuebles.indexOf(t) == in && ((Casa) Inmuebles.get(i)).getEstado().equals("Lista")){
+                                    ((Solares) Inmuebles.get(in)).setNomb(usu.get(noUser).getNomb());
+                                    
+                                }
+                                i++;
+                            }
+                            break;
+                    }
+
+                    break;
             }
         } while (rep);
 
@@ -93,8 +147,7 @@ public class Lab2P2_SamuelZorto {
         System.out.println("[1]Crear Casas/Edificios/Solares\n"
                 + "[2]Listar Casas/Edificios/Solares\n"
                 + "[3]Modificar Casas/Edificios/Solares\n"
-                + "[4]Borrar Casas/Edificios/Solares\n"
-                + "[5]Vender Casas/Edificios/Solares\n");
+                + "[4]Borrar Casas/Edificios/Solares\n");
         int eli = entrada.nextInt();
         int inm;
         switch (eli) {
@@ -147,28 +200,110 @@ public class Lab2P2_SamuelZorto {
                 System.out.println("[3] Solar");
                 System.out.println("[4] Todos");
                 inm = entrada.nextInt();
+                
                 switch (inm) {
                     case 1:
+                        int i = 0;
                         for (Object t : Inmuebles) {
-                            if (t instanceof Casa) {
+                            
+                            if (t instanceof Casa && ((Casa) Inmuebles.get(i)).getEstado().equals("Contruccion en espera")) {
                                 System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
                             }
+                            i++;
+                        }
+                        i = 0;
+                        for (Object t : Inmuebles) {
+                            
+                            if (t instanceof Casa && ((Casa) Inmuebles.get(i)).getEstado().equals("En construccion")) {
+                                System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
+                            }
+                            i++;
+                        }
+                        i = 0;
+                        for (Object t : Inmuebles) {
+                            
+                            if (t instanceof Casa && ((Casa) Inmuebles.get(i)).getEstado().equals("Lista")) {
+                                System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
+                            }
+                            i++;
+                        }
+                        i=0;
+                        for (Object t : Inmuebles) {
+                            
+                            if (t instanceof Casa && ((Casa) Inmuebles.get(i)).getEstado().equals("En espera de demolicion")) {
+                                System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
+                            }
+                            i++;
                         }
                         System.out.println("");
                         break;
                     case 2:
+                        i = 0;
                         for (Object t : Inmuebles) {
-                            if (t instanceof Edificios) {
+                            
+                            if (t instanceof Edificios && ((Edificios) Inmuebles.get(i)).getEstado().equals("Contruccion en espera")) {
                                 System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
                             }
+                            i++;
+                        }
+                        i = 0;
+                        for (Object t : Inmuebles) {
+                            
+                            if (t instanceof Edificios && ((Edificios) Inmuebles.get(i)).getEstado().equals("En construccion")) {
+                                System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
+                            }
+                            i++;
+                        }
+                        i = 0;
+                        for (Object t : Inmuebles) {
+                            
+                            if (t instanceof Edificios && ((Edificios) Inmuebles.get(i)).getEstado().equals("Lista")) {
+                                System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
+                            }
+                            i++;
+                        }
+                        i = 0;
+                        for (Object t : Inmuebles) {
+                            
+                            if (t instanceof Edificios && ((Edificios) Inmuebles.get(i)).getEstado().equals("En espera de demolicion")) {
+                                System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
+                            }
+                            i++;
                         }
                         System.out.println("");
                         break;
                     case 3:
+                        i = 0;
                         for (Object t : Inmuebles) {
-                            if (t instanceof Casa) {
+                            
+                            if (t instanceof Solares && ((Solares) Inmuebles.get(i)).getEstado().equals("Contruccion en espera")) {
                                 System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
                             }
+                            i++;
+                        }
+                        i = 0;
+                        for (Object t : Inmuebles) {
+                            
+                            if (t instanceof Solares && ((Solares) Inmuebles.get(i)).getEstado().equals("En construccion")) {
+                                System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
+                            }
+                            i++;
+                        }
+                        i = 0;
+                        for (Object t : Inmuebles) {
+                            
+                            if (t instanceof Solares && ((Solares) Inmuebles.get(i)).getEstado().equals("Lista")) {
+                                System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
+                            }
+                            i++;
+                        }
+                        i = 0;
+                        for (Object t : Inmuebles) {
+                            
+                            if (t instanceof Solares && ((Solares) Inmuebles.get(i)).getEstado().equals("En espera de demolicion")) {
+                                System.out.println(Inmuebles.indexOf(t) + " " + t.toString());
+                            }
+                            i++;
                         }
                         System.out.println("");
                         break;
@@ -286,12 +421,12 @@ public class Lab2P2_SamuelZorto {
                     case 1:
                         System.out.println("Elija que casa desea destruir: ");
                         for (Object t : Inmuebles) {
-                            if(t instanceof Casa){
+                            if (t instanceof Casa) {
                                 System.out.println(Inmuebles.indexOf(t) + " " + t);
                             }
                         }
                         int pos = entrada.nextInt();
-                        if(Inmuebles.get(pos) instanceof Casa){
+                        if (Inmuebles.get(pos) instanceof Casa) {
                             Inmuebles.remove(pos);
                             System.out.println("Fue borrado!!");
                             System.out.println("");
@@ -300,12 +435,12 @@ public class Lab2P2_SamuelZorto {
                     case 2:
                         System.out.println("Elija que casa desea destruir: ");
                         for (Object t : Inmuebles) {
-                            if(t instanceof Edificios){
+                            if (t instanceof Edificios) {
                                 System.out.println(Inmuebles.indexOf(t) + " " + t);
                             }
                         }
                         pos = entrada.nextInt();
-                        if(Inmuebles.get(pos) instanceof Edificios){
+                        if (Inmuebles.get(pos) instanceof Edificios) {
                             Inmuebles.remove(pos);
                             System.out.println("Fue borrado!!");
                             System.out.println("");
@@ -314,12 +449,12 @@ public class Lab2P2_SamuelZorto {
                     case 3:
                         System.out.println("Elija que casa desea destruir: ");
                         for (Object t : Inmuebles) {
-                            if(t instanceof Solares){
+                            if (t instanceof Solares) {
                                 System.out.println(Inmuebles.indexOf(t) + " " + t);
                             }
                         }
                         pos = entrada.nextInt();
-                        if(Inmuebles.get(pos) instanceof Solares){
+                        if (Inmuebles.get(pos) instanceof Solares) {
                             Inmuebles.remove(pos);
                             System.out.println("Fue borrado!!");
                             System.out.println("");
@@ -327,21 +462,7 @@ public class Lab2P2_SamuelZorto {
                         break;
                 }
                 break;
-            case 5:
-                System.out.println("");
-                System.out.println("[1] Casa");
-                System.out.println("[2] Edificio");
-                System.out.println("[3] Solar");
-                inm = entrada.nextInt();
-                switch (inm) {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                }
-                break;
+
         }
     }
 
